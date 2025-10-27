@@ -10,7 +10,7 @@ def print_top_attention_positions(attention_weights, top_k_percentage=5):
         print(f"Layer {layer}:")
         for head in range(num_heads):
             print(f"  Head {head}:")
-            top_k = max(int(seq_length * top_k_percentage / 100), 1)  # 计算30%的位置数目
+            top_k = max(int(seq_length * top_k_percentage / 100), 1)  # 计算50%的位置数目
 
             for token_index in range(seq_length):
                 # 获取每个token的前30%最大注意力权重位置
@@ -185,3 +185,4 @@ def group_tokens_into_fields_per_head(top_weights_per_layer, overlap_threshold=0
 #         top_weights_per_layer.append(top_weights)
 #
 #     return top_weights_per_layer
+
